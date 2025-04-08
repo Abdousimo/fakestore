@@ -55,7 +55,7 @@ const DeleteProductDialog = ({productId}:Props) => {
         </DialogDescription>
       </DialogHeader>
       <DialogFooter>
-        <DialogClose>
+        <DialogClose asChild>
           <Button variant="ghost" disabled={deleteMutation.isPending}>
             Cancel
           </Button>

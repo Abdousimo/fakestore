@@ -77,11 +77,12 @@ const UpdateProductDialog = ({product}:Props) => {
   
   return (
     <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-      <Button size={"icon"} variant="default">
-        <DialogTrigger asChild>
-            <Pencil size={20} />
-        </DialogTrigger>
-      </Button>
+      <DialogTrigger asChild>
+        <Button size={"icon"} variant="default">
+          <Pencil size={20} />
+        </Button>
+      </DialogTrigger>
+      
     <DialogContent>
       <DialogHeader>
         <DialogTitle>Update product Informations</DialogTitle>
@@ -145,10 +146,10 @@ const UpdateProductDialog = ({product}:Props) => {
                   )}
                 />
                 <DialogFooter>
-                    <DialogClose>
-                    <Button variant="ghost" disabled={updateMutation.isPending}>
-                        Cancel
-                    </Button>
+                    <DialogClose asChild>
+                      <Button variant="ghost" onClick={() => setIsDialogOpen(false)}>
+                          Cancel
+                      </Button>
                     </DialogClose>
                     <Button
                     disabled={updateMutation.isPending}
